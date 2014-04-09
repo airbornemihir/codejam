@@ -53,11 +53,31 @@ int main () {
     VU X(N, 0); {
       VU locations(N, 0);
       for (unsigned int i2 = 1; i2 <= N; ++i2) get_X(N, gt, locations, X, i2);
+    } // {
+    //   VU pseudo_A(N, 1);
+    //   for (unsigned int i2 = 1; i2 <= N; ++i2) 
+    // 	for (unsigned int i3 = 1; i3 < i2; ++i3) 
+    // 	  if (X[i3 - 1] < X[i2 - 1] &&
+    // 	      pseudo_A[i2 - 1] < (1 + pseudo_A[i3 - 1])) 
+    // 	    pseudo_A[i2 - 1] = (1 + pseudo_A[i3 - 1]);
+    //   VU pseudo_B(N, 1);
+    //   for (unsigned int i2 = N; i2 >= 1; --i2) 
+    // 	for (unsigned int i3 = N; i3 > i2; --i3) 
+    // 	  if (X[i3 - 1] < X[i2 - 1] &&
+    // 	      pseudo_B[i2 - 1] < (1 + pseudo_B[i3 - 1])) 
+    // 	    pseudo_B[i2 - 1] = (1 + pseudo_B[i3 - 1]);
+    //   for (unsigned int i2 = 1; i2 <= N; ++i2) {
+    // 	if (A[i2 - 1] != pseudo_A[i2 - 1])
+    // 	  std::cout << "i1 = " << i1 << ", i2 = " << i2 << ", A[i2 - 1] = " << A[i2 - 1] << ", pseudo_A[i2 - 1] = " << pseudo_A[i2 - 1] << std::endl;
+    // 	if (B[i2 - 1] != pseudo_B[i2 - 1])
+    // 	  std::cout << "i1 = " << i1 << ", i2 = " << i2 << ", B[i2 - 1] = " << B[i2 - 1] << ", pseudo_B[i2 - 1] = " << pseudo_B[i2 - 1] << std::endl;
+    //   }
+    // } 
+    {
+      std::cout << "Case #" << i1 << ":";
+      for (unsigned int i2 = 1; i2 <= N; ++i2) std::cout << " " << X[i2 - 1];
+      std::cout << std::endl;
     }
-
-    std::cout << "Case #" << i1 << ":";
-    for (unsigned int i2 = 1; i2 <= N; ++i2) std::cout << " " << X[i2 - 1];
-    std::cout << std::endl;
   }
 
   return 0;
